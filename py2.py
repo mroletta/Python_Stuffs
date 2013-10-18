@@ -38,7 +38,7 @@ def rgb_to_gray_level(rgb_img, conversion = luminosity):
 # replace a pixel's gray level with 0 (black) if it's gray
 # level value is <= than the threshold and with 
 # 255 (white) if it's > than the threshold.
-def binarize(gl_img, thresh=140):
+def binarize(gl_img, thresh=110):
 	gen_pix = gen_pix_factory(gl_img)
 	for pix in gen_pix:
 		if pix[1] <= thresh:
@@ -76,7 +76,7 @@ def vertical_grayscale(gl_img):
 	return vert_list
 
 
-im = Image.open("C:\Users\iolvera\Desktop\Mathematica EL Images\Rooftop Monitoring\DAAPANEL_12330\DAAPANEL_12330_2012_11.jpg")
+im = Image.open("C:\Users\iolvera\Desktop\Mathematica EL Images\DAAPANEL19491_2013_10_10.jpg")
 
 
 glim = rgb_to_gray_level(im)     #glim = graylevel image

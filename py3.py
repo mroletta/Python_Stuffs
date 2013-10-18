@@ -1,11 +1,11 @@
 import wx
-class ExampleFrame(wx.Frame):
-	def __init__(self,parent):
-		wx.Frame.__init__(self, parent)
-		panel = wx.Panel(self)
-		self.quote = wx.StaticText(panel, label="Your quote: ", pos=(20,30))
-		self.Show()
-
 app = wx.App(False)
-ExampleFrame(None)
+frame = wx.Frame(None, title="Demo with Notebook")
+nb = wx.Notebook(frame)
+
+
+nb.AddPage(ExamplePanel(nb), "Absolute Positioning")
+nb.AddPage(ExamplePanel(nb), "Page Two")
+nb.AddPage(ExamplePanel(nb), "Page Three")
+frame.Show()
 app.MainLoop()
